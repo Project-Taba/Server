@@ -8,6 +8,7 @@ import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import taba.tabaServer.config.AuthTokens;
 
 import java.security.Key;
 import java.util.Date;
@@ -47,6 +48,21 @@ public class JwtTokenProvider {
                     .getBody();
         } catch (ExpiredJwtException e) {
             return e.getClaims();
+        }
+    }
+
+    //토큰 검증
+    public boolean validToken(String accessToken) {
+        try {
+            Jwts.parserBuilder()
+                    .setSigningKey(key)
+                    .build()
+                    .parseClaimsJws(accessToken)
+                    .getBody();
+            return true;
+        } catch (Exception e) {
+            System.out.println("토큰 검증 실패: " + e.getMessage());
+            return false;
         }
     }
 }
