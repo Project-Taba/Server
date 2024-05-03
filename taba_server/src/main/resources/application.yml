@@ -12,6 +12,24 @@ spring: #띄어쓰기 없음
 #        show_sql: true   #띄어쓰기 8칸
         format_sql: true  #띄어쓰기 8칸
         default_batch_fetch_size: 100 #100개까지 갖고옴
+# OAuth 설정
+oauth:
+  kakao:
+    client-id: 0597ae87f8af7857bdf50b83f958631b
+    url:
+      auth: https://kauth.kakao.com
+      api: https://kapi.kakao.com
+  naver:
+    secret: WI8hCJJUnu
+    client-id: FmlggPFTyUJ9RTE4KSHw
+    url:
+      auth: https://nid.naver.com
+      api: https://openapi.naver.com
+# jwt secret key
+jwt:
+  secret-key: Z29nby10bS1zZXJ2ZXItZGxyamVvYW9yb3JodG9kZ290c3Atam9vbmdhbmduaW0teWVvbHNpbWhpaGFsZ2VveW8K
+
+
 #    open-in-view: false # OSIV OFF
 logging.level: #띄어쓰기 없음
     org.hibernate.SQL: debug #띄어쓰기 2칸
