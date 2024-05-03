@@ -13,7 +13,7 @@ public class AuthTokensGenerator {
      * AuthTokens 을 발급해주는 클래스
      */
     private static final String BEARER_TYPE = "Bearer";
-    private static final long ACCESS_TOKEN_EXPIRE_TIME = 1000 * 60 * 600;            // 600분(10시간)
+    private static final long ACCESS_TOKEN_EXPIRE_TIME = 1000 * 60 * 60 * 10;            // 600분(10시간)
     private static final long REFRESH_TOKEN_EXPIRE_TIME = 1000 * 60 * 60 * 24 * 7;  // 7일
 
     private final JwtTokenProvider jwtTokenProvider;
