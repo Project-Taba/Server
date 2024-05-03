@@ -1,6 +1,6 @@
 package taba.tabaServer.config;
 
-import com.example.demo.config.infra.JwtTokenProvider;
+import taba.tabaServer.config.infra.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +15,7 @@ public class AuthTokensGenerator {
     private static final String BEARER_TYPE = "Bearer";
     private static final long ACCESS_TOKEN_EXPIRE_TIME = 1000 * 60 * 600;            // 600분(10시간)
     private static final long REFRESH_TOKEN_EXPIRE_TIME = 1000 * 60 * 60 * 24 * 7;  // 7일
-
+    JwtTokenProvider
     private final JwtTokenProvider jwtTokenProvider;
 
     //memberId (사용자 식별값) 을 받아 Access Token 을 생성
